@@ -120,16 +120,5 @@ source <(ng completion script)
 # Load fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-# Custom Aliases
-# ls
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-# git
-alias glo='git log --oneline'
-alias gc='git commit'
-alias gca='git commit -a'
-alias gs='git status'
-
 # Added by Amplify CLI binary installer
 export PATH="$HOME/.amplify/bin:$PATH"
