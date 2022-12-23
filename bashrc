@@ -122,3 +122,6 @@ source <(ng completion script)
 
 # Added by Amplify CLI binary installer
 export PATH="$HOME/.amplify/bin:$PATH"
+
+# Add metadata scripts
+[ -f ~/.bash_meta ] && source ~/.bash_meta
