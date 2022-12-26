@@ -114,8 +114,11 @@ fi
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 
-# Load Angular CLI autocompletion.
-source <(ng completion script)
+# Check if Angular CLI is installed
+if command -v ng &> /dev/null; then
+  # Load Angular CLI autocompletion
+  source <(ng completion script)
+fi
 
 # Load fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
