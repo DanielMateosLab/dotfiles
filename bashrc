@@ -135,3 +135,6 @@ export PATH="$HOME/.amplify/bin:$PATH"
 
 # Add ~/.bin to PATH
 export PATH="$HOME/.bin:$PATH"
+
+# Source nvm
+[ -f "/usr/share/nvm/init-nvm.sh" ] && source /usr/share/nvm/init-nvm.sh
