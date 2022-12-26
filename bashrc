@@ -121,7 +121,11 @@ if command -v ng &> /dev/null; then
 fi
 
 # Load fzf
+# Ubuntu 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+# Manjaro
+[ -f /usr/share/fzf/key-bindings.bash ] && source /usr/share/fzf/key-bindings.bash
+[ -f /usr/share/fzf/completion.bash ] && source /usr/share/fzf/completion.bash
 
 # Added by Amplify CLI binary installer
 export PATH="$HOME/.amplify/bin:$PATH"
