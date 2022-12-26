@@ -132,3 +132,6 @@ export PATH="$HOME/.amplify/bin:$PATH"
 
 # Add metadata scripts
 [ -f ~/.bash_meta ] && source ~/.bash_meta
+
+# Add ~/.bin to PATH
+export PATH="$HOME/.bin:$PATH"
