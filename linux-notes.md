@@ -8,3 +8,4 @@
 ## Manjaro general settings (like keyboard remapping)
 
 - Use keyd.
+- To set the keyboard layout, I had to append 'setxkbmap -model pc105 -layout us -variant intl' to '.profile'. This file is executed on startup and sets the keyboard layout using setxkbmap.
