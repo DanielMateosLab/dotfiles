@@ -10,3 +10,4 @@
 - Use keyd.
 - To set the keyboard layout, I had to append 'setxkbmap -model pc105 -layout us -variant altgr-intl' to '.profile'. This file is executed on startup and sets the keyboard layout using setxkbmap.
 - To change dmenu 'open app preferences' change the file inside ~/.config/dmenu-recent
+- To enable vim system clipboard, just install gvim, which will remove a minimal vim and use a vim-gtk variant instead. .vimrc from this file must be set up too.
