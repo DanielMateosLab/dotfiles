@@ -12,3 +12,4 @@
 - To change dmenu 'open app preferences' change the file inside ~/.config/dmenu-recent
 - To enable vim system clipboard, just install gvim, which will remove a minimal vim and use a vim-gtk variant instead. .vimrc from this file must be set up too.
 - To enable aac bluetooth codec, install pipewire pulse and configure sound settings using pavucontrol.
+- To see wifi password, use 'sudo cat /etc/NetworkManager/system-connections/{SSID or network name}'
