@@ -16,4 +16,5 @@ alias gc='git commit'
 alias gca='git commit -a'
 alias gs='git status'
 
-
+# Brightness
+alias brightness='cd /sys/class/backlight/intel_backlight'
