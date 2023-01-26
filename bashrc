@@ -138,3 +138,6 @@ export PATH="$HOME/.bin:$PATH"
 
 # Source nvm
 [ -f "/usr/share/nvm/init-nvm.sh" ] && source /usr/share/nvm/init-nvm.sh
+
+# Source git completion
+[ -f "/usr/share/bash-completion/completions/git" ] && source /usr/share/bash-completion/completions/git
