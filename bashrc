@@ -142,7 +142,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# Fix WSL2 interop 
+# Fix WSL2 interop
 fix_wsl2_interop() {
     for i in $(pstree -np -s $$ | grep -o -E '[0-9]+'); do
         if [[ -e "/run/WSL/${i}_interop" ]]; then
@@ -150,7 +150,9 @@ fix_wsl2_interop() {
         fi
     done
 }
-fix_wsl2_interop
+if [[ $(uname -r) == *WSL* ]]; then
+    fix_wsl2_interop
+fi
 
 # Opens vscode in the specified directory and exits the current shell
 # Meant to be used in bash
