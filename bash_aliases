@@ -18,3 +18,6 @@ alias gs='git status'
 
 # Brightness
 alias brightness='cd /sys/class/backlight/intel_backlight'
+
+# Aliases for WSL
+alias wclip='clip.exe'
