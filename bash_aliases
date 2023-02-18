@@ -12,6 +12,7 @@ alias llh='ls --color=always -lA | grep --color=never -E "\s\."'
 
 # git
 alias glo='git log --oneline'
+alias glc='git log --format="%C(auto)%h%Cgreen %ae %C(brightblue)%ah %Creset %n    %s"'
 alias gc='git commit'
 alias gca='git commit -a'
 alias gs='git status'
