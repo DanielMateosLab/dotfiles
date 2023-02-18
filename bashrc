@@ -151,3 +151,10 @@ fix_wsl2_interop() {
     done
 }
 fix_wsl2_interop
+
+# Opens vscode in the specified directory and exits the current shell
+# Meant to be used in bash
+codex() {
+    code $1
+    exit
+}
