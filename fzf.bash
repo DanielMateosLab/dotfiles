@@ -1,17 +1,17 @@
 ## Arch / Manjaro ##
 # Setup fzf
 # ---------
-if [[ ! "$PATH" == */home/dani/.fzf/bin* ]]; then
-  PATH="${PATH:+${PATH}:}/home/dani/.fzf/bin"
+if [[ ! "$PATH" == *$HOME/.fzf/bin* ]] && [ -d "$HOME/.fzf/bin" ]; then
+  PATH="${PATH:+${PATH}:}$HOME/.fzf/bin"
 fi
 # Auto-completion
 # ---------------
-[[ $- == *i* ]] && source "/home/dani/.fzf/shell/completion.bash" 2> /dev/null
+[[ $- == *i* ]] && source "$HOME/.fzf/shell/completion.bash" 2> /dev/null
 # Key bindings
 # ------------
-# source "/home/dani/.fzf/shell/key-bindings.bash"
-if [ -f "/home/dani/.fzf/shell/key-bindings.bash" ]; then
-  source "/home/dani/.fzf/shell/key-bindings.bash"
+# source "$HOME/.fzf/shell/key-bindings.bash"
+if [ -f "$HOME/.fzf/shell/key-bindings.bash" ]; then
+  source "$HOME/.fzf/shell/key-bindings.bash"
 fi
 
 ## Ubuntu ##
