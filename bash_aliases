@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Custom Aliases
 
-alias python=/usr/local/bin/python3.10
+alias python=python3
 
 # ls
 alias ll='ls -alF'
@@ -22,3 +22,4 @@ alias brightness='cd /sys/class/backlight/intel_backlight'
 
 # Aliases for WSL
 alias wclip='clip.exe'
+alias homeclip='echo $WHOME | clip.exe'
