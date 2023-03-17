@@ -168,4 +168,4 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 # Source gen_branch_name
-[ -f ~/.gen_branch_name ] && source ~/.gen_branch_name && gen_branch_name
+[ -f ~/.gen_branch_name ] && source ~/.gen_branch_name
