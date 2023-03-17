@@ -16,7 +16,7 @@ gen_branch_name() {
 
   # Try to get epic name from current branch name
   trap on_git_error ERR
-  epic_name=$(git status 2>/dev/null | grep -Po 'EDP-\d+(:_[\w-]+)?' -m 1)
+  epic_name=$(git status 2>/dev/null | grep -Po 'EDP-\d+(?:_[\w-]+)?' -m 1)
   trap - ERR
 
   # If epic name is not found, use "EDP-x"
