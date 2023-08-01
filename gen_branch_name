@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+gen_branch_name() {
+  # Parse command line arguments
+  while getopts i:n: option
+  do
+      case "${option}"
+      in
+          i) id=${OPTARG};;
+          n) name=${OPTARG};;
+      esac
+  done
+
+  # Replace spaces with underscores
+  new_name=$(echo "$name" | sed 's/ /_/g')
+
+  # Try to get epic name from current branch name
+  trap on_git_error ERR
+  epic_name=$(git status 2>/dev/null | grep -Po 'EDP-\d+(?:_[\w-]+)?' -m 1)
+  trap - ERR
+
+  # If epic name is not found, use "EDP-x"
+  if [ -z "$epic_name" ]; then
+    epic_name="EDP-x"
+  fi
+
+  # Generate feature branch name
+  branch_name="feature/${epic_name}/METV4-${id}_${new_name}"
+
+  # Copy branch name to clipboard
+  echo $branch_name | wclip
+
+  echo "Branch name copied to clipboard: $branch_name" 
+}
+
+on_git_error() {
+  echo "Could not retrieve the epic name. Change it yourself."
+}

@@ -26,10 +26,6 @@
     "when": "terminalFocus"
   },
   {
-    "key": "ctrl+t c",
-    "command": "workbench.action.terminal.newInActiveWorkspace"
-  },
-  {
     "key": "alt+down",
     "command": "-workbench.action.terminal.focusNextPane",
     "when": "terminalFocus && terminalProcessSupported"
@@ -77,15 +73,11 @@
   {
     "key": "ctrl+l",
     "command": "workbench.action.nextEditor",
-    "when": "vim.active"
+    "when": "vim.active && !terminalFocus"
   },
   {
     "key": "ctrl+h",
     "command": "workbench.action.previousEditor"
-  },
-  {
-    "key": "alt+b",
-    "command": "workbench.files.action.focusOpenEditorsView"
   },
   {
     "key": "ctrl+j",
@@ -112,11 +104,135 @@
     "when": "editorTextFocus && !vim.active"
   },
   {
+    "key": "ctrl+`",
+    "command": "-workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active"
+  },
+  {
     "key": "alt+t",
-    "command": "terminal.focus"
+    "command": "workbench.action.terminal.toggleTerminal"
+  },
+  {
+    "key": "alt+b",
+    "command": "workbench.explorer.fileView.focus"
+  },
+  {
+    "key": "alt+o",
+    "command": "outline.focus"
+  },
+  {
+    "key": "ctrl+k ctrl+h",
+    "command": "workbench.files.action.collapseExplorerFolders"
+  },
+  {
+    "key": "ctrl+s",
+    "command": "workbench.action.files.save",
+    "when": "!vim.active"
+  },
+  {
+    "key": "ctrl+s",
+    "command": "-workbench.action.files.save"
+  },
+  {
+    "key": "ctrl+q",
+    "command": "workbench.action.quickOpenNavigateNextInViewPicker",
+    "when": "inQuickOpen && inViewsPicker && !terminalFocus"
+  },
+  {
+    "key": "ctrl+q",
+    "command": "-workbench.action.quickOpenNavigateNextInViewPicker",
+    "when": "inQuickOpen && inViewsPicker"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "notebook.centerActiveCell",
+    "when": "notebookEditorFocused && !terminalFocus"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "-notebook.centerActiveCell",
+    "when": "notebookEditorFocused"
+  },
+  {
+    "key": "ctrl+q",
+    "command": "workbench.action.quickOpenView",
+    "when": "!terminalFocus"
+  },
+  {
+    "key": "ctrl+q",
+    "command": "-workbench.action.quickOpenView"
+  },
+  {
+    "key": "alt+j",
+    "command": "git.checkout"
+  },
+  {
+    "key": "ctrl+shift+g g",
+    "command": "-workbench.view.scm",
+    "when": "workbench.scm.active && !gitlens:disabled && config.gitlens.keymap == 'chorded'"
+  },
+  {
+    "key": "ctrl+k ctrl+g",
+    "command": "workbench.view.scm",
+    "when": "workbench.scm.active"
+  },
+  {
+    "key": "ctrl+shift+g",
+    "command": "-workbench.view.scm",
+    "when": "workbench.scm.active"
   },
   {
     "key": "ctrl+t",
-    "command": "terminal.focus"
+    "command": "workbench.action.showAllSymbols"
+  },
+  {
+    "key": "ctrl+t",
+    "command": "-workbench.action.showAllSymbols"
+  },
+  {
+    "key": "ctrl+shift+t",
+    "command": "workbench.action.reopenClosedEditor",
+    "when": "!terminalFocus"
+  },
+  {
+    "key": "ctrl+shift+t",
+    "command": "-workbench.action.reopenClosedEditor"
+  },
+  {
+    "key": "ctrl+t",
+    "command": "extension.vim_ctrl+t",
+    "when": "editorTextFocus && vim.active && vim.use<C-t> && !inDebugRepl"
+  },
+  {
+    "key": "ctrl+t",
+    "command": "-extension.vim_ctrl+t",
+    "when": "editorTextFocus && vim.active && vim.use<C-t> && !inDebugRepl"
+  },
+  {
+    "key": "ctrl+k ctrl+t",
+    "command": "-workbench.action.selectTheme"
+  },
+  {
+    "key": "ctrl+k ctrl+n",
+    "command": "workbench.action.terminal.newInActiveWorkspace",
+    "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+  },
+  {
+    "key": "ctrl+k h",
+    "command": "git.push"
+  },
+  {
+    "key": "ctrl+k l",
+    "command": "git.pull"
+  },
+  {
+    "key": "ctrl+k ctrl+enter",
+    "command": "github.copilot.generate",
+    "when": "editorTextFocus && github.copilot.activated && !inInteractiveInput && !interactiveEditorFocused"
+  },
+  {
+    "key": "ctrl+enter",
+    "command": "-github.copilot.generate",
+    "when": "editorTextFocus && github.copilot.activated && !inInteractiveInput && !interactiveEditorFocused"
   }
 ]

@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -138,6 +139,38 @@ export PATH="$HOME/.bin:$PATH"
 
 # Source nvm
 [ -f "/usr/share/nvm/init-nvm.sh" ] && source /usr/share/nvm/init-nvm.sh
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Fix WSL2 interop
+fix_wsl2_interop() {
+    for i in $(pstree -np -s $$ | grep -o -E '[0-9]+'); do
+        if [[ -e "/run/WSL/${i}_interop" ]]; then
+            export WSL_INTEROP=/run/WSL/${i}_interop
+        fi
+    done
+}
+if [[ $(uname -r) == *WSL* ]]; then
+    fix_wsl2_interop
+fi
+
+# Opens vscode in the specified directory and exits the current shell
+# Meant to be used in bash
+codex() {
+    code $1
+    exit
+}
+
+if [ -d "$HOME/.pyenv" ]; then
+    export PYENV_ROOT="$HOME/.pyenv"
+    export PATH="$PYENV_ROOT/bin:$PATH"
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
+fi
+
+# Source gen_branch_name
+[ -f ~/.gen_branch_name ] && source ~/.gen_branch_name
 
 # Source git completion
 [ -f "/usr/share/bash-completion/completions/git" ] && source /usr/share/bash-completion/completions/git
