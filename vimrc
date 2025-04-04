@@ -39,7 +39,7 @@ imap jj <Esc>
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 " Keep cursor position while joining lines
-nnoremap J mzJ`z
+" nnoremap J mzJ`z
 " Center screen after half-page jumps
 nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
