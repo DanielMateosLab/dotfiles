@@ -49,4 +49,4 @@ if [ -d "$FNM_PATH" ]; then
   export PATH="/Users/default/Library/Application Support/fnm:$PATH"
   eval "`fnm env`"
 fi
-eval "$(fnm env)"
+eval "$(fnm env --use-on-cd --version-file-strategy=recursive --corepack-enabled)"
