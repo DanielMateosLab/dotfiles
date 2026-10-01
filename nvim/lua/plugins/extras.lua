@@ -12,6 +12,11 @@ return {
     },
   },
   {
+    "nvim-treesitter/nvim-treesitter-context",
+    opts = { max_lines = 5 },
+  },
+  { "jd4n14/vscode2026.nvim", lazy = true },
+  {
     "coder/claudecode.nvim",
     opts = { terminal = { provider = "none" } },
   },
