@@ -73,10 +73,35 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-" Add gruv theme with vim-plug
 call plug#begin('~/.vim/plugged')
-Plug 'morhetz/gruvbox'
+Plug 'cormacrelf/vim-colors-github'
 call plug#end()
 
-set background=dark
-colorscheme gruvbox
+" --- Colorscheme: GitHub, adapts to system light/dark ---
+function! s:SyncBackgroundWithSystem() abort
+  if has('mac') || has('macunix')
+    let l:style = system('defaults read -g AppleInterfaceStyle 2>/dev/null')
+    let &background = (l:style =~? 'Dark') ? 'dark' : 'light'
+  elseif has('unix')
+    let l:style = system('gsettings get org.gnome.desktop.interface color-scheme 2>/dev/null')
+    let &background = (l:style =~? 'dark') ? 'dark' : 'light'
+  endif
+endfunction
+
+call s:SyncBackgroundWithSystem()
+colorscheme github
+
+augroup SystemThemeSync
+  autocmd!
+  autocmd FocusGained * call s:SyncBackgroundWithSystem() | colorscheme github
+augroup END
+
+function! OpenInVSCode()
+  call system('code ' . shellescape(b:netrw_curdir . '/' . expand('<cfile>')))
+endfunction
+
+augroup NetrwVSCode
+  autocmd!
+  autocmd FileType netrw nnoremap <buffer> <leader>c :call OpenInVSCode()<CR>
+augroup END
+

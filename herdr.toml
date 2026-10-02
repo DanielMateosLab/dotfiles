@@ -1,0 +1,18 @@
+onboarding = false
+
+[ui.toast]
+delivery = "herdr"
+
+[theme]
+name = "catppuccin-latte"
+auto_switch = true
+
+[keys]
+prefix = "ctrl+b"
+last_pane = "prefix+;"
+
+[[keys.command]]
+key = "prefix+shift+m"
+type = "shell"
+command = '"$HERDR_BIN_PATH" pane move "$HERDR_ACTIVE_PANE_ID" --new-tab --focus'
+description = "Mover panel a una tab nueva"
