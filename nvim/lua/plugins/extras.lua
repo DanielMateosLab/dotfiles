@@ -1,4 +1,35 @@
+local ts_kinds = {
+  "Class",
+  "Constructor",
+  "Enum",
+  "Field",
+  "Function",
+  "Interface",
+  "Method",
+  "Module",
+  "Namespace",
+  "Package",
+  "Property",
+  "Struct",
+  "Trait",
+  "Variable",
+}
+
 return {
+  {
+    "LazyVim/LazyVim",
+    opts = { kind_filter = { typescript = ts_kinds, typescriptreact = ts_kinds } },
+  },
+  {
+    "folke/snacks.nvim",
+    opts = {
+      picker = {
+        sources = {
+          explorer = { hidden = true, ignored = true, exclude = { ".git", "node_modules" } },
+        },
+      },
+    },
+  },
   {
     "esmuellert/codediff.nvim",
     cmd = "CodeDiff",
