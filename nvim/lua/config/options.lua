@@ -3,3 +3,5 @@
 -- Add any additional options here
 
 vim.opt.scrollopt:append("hor")
+
+vim.opt.clipboard = ""
