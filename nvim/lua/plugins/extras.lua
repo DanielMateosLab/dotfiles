@@ -23,6 +23,7 @@ return {
   {
     "folke/snacks.nvim",
     opts = {
+      image = { enabled = true },
       picker = {
         sources = {
           explorer = { hidden = true, ignored = true, exclude = { ".git", "node_modules" } },
@@ -55,6 +56,9 @@ return {
   { "jd4n14/vscode2026.nvim", lazy = true },
   {
     "coder/claudecode.nvim",
-    opts = { terminal = { provider = "none" } },
+    opts = { terminal = { provider = "snacks" } },
+    keys = {
+      { "<leader>af", "<Esc><cmd>ClaudeCodeFocus<cr>", mode = "x", desc = "Focus Claude" },
+    },
   },
 }
