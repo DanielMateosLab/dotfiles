@@ -155,8 +155,8 @@ Line numbers turn absolute while you are in insert mode and go back to relative 
 | Anywhere | `:CodeDiff main...` | Diff everything on your branch since it split from `main` |
 | Any CodeDiff window | `q` | Close CodeDiff |
 | Any CodeDiff window | `gt` / `gT` | Switch to the next / previous tab and leave CodeDiff open |
-| Diff panes | `<leader>b` | Hide or show the file list |
-| Diff panes | `<leader>e` | Move into the file list |
+| Diff panes | `\b` | Hide or show the file list |
+| Diff panes | `\e` | Move into the file list |
 | File list | `<C-l>` (or `<C-w>l`) | Move from the list into the diff |
 | Left diff pane | `<C-h>` | Move back to the file list |
 | File list | `<CR>` | Open the diff for the file under the cursor (the cursor stays in the list) |
@@ -172,6 +172,8 @@ Line numbers turn absolute while you are in insert mode and go back to relative 
 | Diff panes | `:set scb` in each pane, then `:syncbind` | Re-sync scrolling if the panes come apart |
 | Normal buffer | `<leader>ghp` | Preview the hunk under the cursor (gitsigns) |
 | Normal buffer | `<leader>ghd` | Diff the file against the index (gitsigns) |
+
+`\` is the local leader: press the backslash key, then the letter, with no Space. CodeDiff uses it so `<leader>b` and `<leader>e` keep their LazyVim meaning inside the diff.
 
 Both panes scroll together vertically and horizontally (`scrollopt` includes `hor` in `lua/config/options.lua`).
 

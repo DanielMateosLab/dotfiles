@@ -5,3 +5,4 @@
 vim.opt.scrollopt:append("hor")
 
 vim.opt.clipboard = ""
+vim.opt.spelllang = { "es", "en" }

@@ -34,6 +34,11 @@ return {
   {
     "esmuellert/codediff.nvim",
     cmd = "CodeDiff",
+    opts = {
+      keymaps = {
+        view = { toggle_explorer = "<localleader>b", focus_explorer = "<localleader>e" },
+      },
+    },
     keys = {
       { "<leader>gc", "<cmd>CodeDiff<cr>", desc = "CodeDiff" },
     },
