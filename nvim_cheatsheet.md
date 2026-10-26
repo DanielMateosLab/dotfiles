@@ -161,7 +161,7 @@ Line numbers turn absolute while you are in insert mode and go back to relative 
 | Left diff pane | `<C-h>` | Move back to the file list |
 | File list | `<CR>` | Open the diff for the file under the cursor (the cursor stays in the list) |
 | File list | `K` | Show the full path of the file under the cursor |
-| File list | `i` | Switch between list and tree view |
+| File list | `i` | Switch between tree view (default) and list view |
 | Diff panes | `]c` / `[c` | Next / previous change |
 | Diff panes | `]f` / `[f` | Next / previous file |
 | Diff panes or list | `-` | Stage or unstage the file |
