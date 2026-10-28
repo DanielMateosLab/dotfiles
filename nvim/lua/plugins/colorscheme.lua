@@ -27,6 +27,7 @@ return {
     init = function()
       local function set_hl()
         vim.api.nvim_set_hl(0, "ExplorerActiveBuf", { bg = "#c8d9f0" })
+        vim.api.nvim_set_hl(0, "OctoFilePanelSelectedFile", { bg = "#c8d9f0" })
       end
       set_hl()
       vim.api.nvim_create_autocmd("ColorScheme", { callback = set_hl })
