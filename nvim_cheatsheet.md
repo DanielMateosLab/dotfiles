@@ -11,9 +11,11 @@
 - [Tabs, buffers and windows](#tabs-buffers-and-windows)
 - [Clipboard](#clipboard)
 - [Editing habits from Vim](#editing-habits-from-vim)
+- [Folds](#folds)
 - [Code (LSP)](#code-lsp)
 - [Git](#git)
 - [CodeDiff](#codediff)
+- [Octo (GitHub PRs)](#octo-github-prs)
 - [Toggles and appearance](#toggles-and-appearance)
 - [Colorschemes installed](#colorschemes-installed)
 - [Plugin management](#plugin-management)
@@ -115,6 +117,17 @@ A buffer is a file loaded in memory. A window is a split that shows one buffer. 
 
 Line numbers turn absolute while you are in insert mode and go back to relative when you leave it.
 
+## Folds
+
+Octo's diff windows fold every unchanged region, so a diff there shows only the hunks. CodeDiff folds nothing unless compact mode is on (`gc`).
+
+| Key | Action |
+|---|---|
+| `zR` | **R**eveal: open every fold, so you see the whole file |
+| `zM` | **M**inimize: close every fold |
+| `zo` / `zc` | Open / close the fold under the cursor |
+| `za` | Toggle the fold under the cursor |
+
 ## Code (LSP)
 
 | Key | Action |
@@ -176,6 +189,41 @@ Line numbers turn absolute while you are in insert mode and go back to relative 
 `\` is the local leader: press the backslash key, then the letter, with no Space. CodeDiff uses it so `<leader>b` and `<leader>e` keep their LazyVim meaning inside the diff.
 
 Both panes scroll together vertically and horizontally (`scrollopt` includes `hor` in `lua/config/options.lua`).
+
+## Octo (GitHub PRs)
+
+Octo reads and writes through `gh`, so it only sees pushed PRs. Its review diff is always side by side: there is no unified view. `\` is the local leader (backslash, then the letter).
+
+| Where | Key | Action |
+|---|---|---|
+| Anywhere | `<leader>gp` / `<leader>gP` | List / search PRs |
+| Anywhere | `<leader>gi` / `<leader>gI` | List / search issues |
+| Anywhere | `<leader>gr` / `<leader>gS` | List repos / search |
+| Anywhere | `:Octo pr edit 123` | Open PR 123 |
+| PR buffer | `:Octo review start` | Start the review: file panel at the bottom, two diff windows on top |
+| Review | `\vs` | Submit: write the summary, then `<C-m>` comment, `<C-a>` approve, `<C-r>` request changes |
+| Review | `\vd` / `\vr` | Discard / resume the pending review |
+| Review | `<C-c>` | Close the review tab |
+| Review | `:Octo review comments` | List pending comments (`<CR>` jumps to one) |
+| Diff | `\ca` | Add a comment on the line or visual selection, then `:w` to save it |
+| Diff | `\sa` | Add a suggestion, then `:w` |
+| Diff | `]t` / `[t` | Next / previous thread |
+| Diff | `gf` | Go to the file |
+| Diff | `zR` | Open every fold to see the whole file |
+| Thread window | `\cr` | Reply |
+| Thread window | `\cd` | Delete the comment |
+| Thread window | `\ce` | Show the comment's edit history |
+| Thread window | `\rt` / `\rT` | Resolve / unresolve the thread |
+| Diff or panel | `\<space>` | Mark the file as viewed or not |
+| Diff or panel | `]q` / `[q` | Next / previous file |
+| Diff or panel | `]u` / `[u` | Next / previous unviewed file |
+| Diff or panel | `\b` | Hide or show the file panel |
+| Diff or panel | `\e` | Move into the file panel |
+| Panel | `<CR>` | Open the file under the cursor |
+| Panel | `R` | Refresh the file list |
+| Panel | `\C` | Review a single commit of the PR |
+
+To edit one of your comments, put the cursor on its line, move to the thread window, change the text and save with `:w`.
 
 ## Toggles and appearance
 
