@@ -209,7 +209,7 @@ Octo reads and writes through `gh`, so it only sees pushed PRs. Its review diff 
 | Diff | `\sa` | Add a suggestion, then `:w` |
 | Diff | `]t` / `[t` | Next / previous thread |
 | Diff | `gf` | Go to the file |
-| Diff | `zR` | Open every fold to see the whole file |
+| Diff | `zR` / `zM` | Open / close every fold: whole file or just the hunks |
 | Thread window | `\cr` | Reply |
 | Thread window | `\cd` | Delete the comment |
 | Thread window | `\ce` | Show the comment's edit history |
