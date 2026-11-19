@@ -18,3 +18,9 @@ key = "prefix+shift+m"
 type = "shell"
 command = '"$HERDR_BIN_PATH" pane move "$HERDR_ACTIVE_PANE_ID" --new-tab --focus'
 description = "Mover panel a una tab nueva"
+
+[[keys.command]]
+key = "prefix+shift+o"
+type = "shell"
+command = '~/.config/herdr/tab-to-workspace.sh'
+description = "Mover tab a workspace nuevo"
