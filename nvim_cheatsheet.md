@@ -11,6 +11,7 @@
 - [Tabs, buffers and windows](#tabs-buffers-and-windows)
 - [Clipboard](#clipboard)
 - [Editing habits from Vim](#editing-habits-from-vim)
+- [Expand and shrink a selection](#expand-and-shrink-a-selection)
 - [Folds](#folds)
 - [Code (LSP)](#code-lsp)
 - [Git](#git)
@@ -117,6 +118,16 @@ A buffer is a file loaded in memory. A window is a split that shows one buffer. 
 
 Line numbers turn absolute while you are in insert mode and go back to relative when you leave it.
 
+## Expand and shrink a selection
+
+Start a visual selection (`v` on a word) and grow it one syntactic level at a time: word, expression, argument list, statement, block, function, and so on.
+
+| Key | Action |
+|---|---|
+| `<C-Space>` | Expand the selection to the next treesitter node (Flash) |
+| `<BS>` | Shrink it back to the previous node |
+| `an` / `in` | Same thing with the native Neovim 0.12 mappings: expand / shrink |
+
 ## Folds
 
 Octo's diff windows fold every unchanged region, so a diff there shows only the hunks. CodeDiff folds nothing unless compact mode is on (`gc`).
@@ -136,7 +147,7 @@ Octo's diff windows fold every unchanged region, so a diff there shows only the 
 | `gr` | References |
 | `gI` | Implementations |
 | `gy` | Type definition |
-| `K` | Hover docs |
+| `K` | Hover docs: the type and documentation of the symbol under the cursor. Press `K` again to enter the float and scroll, `q` or `<Esc>` to close |
 | `<leader>ca` | Code action |
 | `<leader>cr` | Rename |
 | `<leader>cf` | Format |
@@ -156,6 +167,8 @@ Octo's diff windows fold every unchanged region, so a diff there shows only the 
 | `<leader>gd` | Diff of hunks |
 | `<leader>gl` | Git log |
 | `<leader>gb` | Blame line |
+| `<leader>ghb` | Blame line in full (commit message and diff) |
+| `<leader>ghB` | Blame the whole buffer |
 | `<leader>ghp` | Preview hunk |
 | `]h` / `[h` | Next / previous hunk |
 
