@@ -3,7 +3,9 @@
 -- Add any additional keymaps here
 
 vim.keymap.set("n", "<leader>fy", function()
-  vim.fn.setreg("+", vim.fn.expand("%"))
+  local file = vim.api.nvim_buf_get_name(0)
+  local root = vim.fs.root(file, ".git")
+  vim.fn.setreg("+", root and vim.fs.relpath(root, file) or vim.fn.fnamemodify(file, ":."))
 end, { desc = "Copy Relative Path" })
 
 vim.keymap.set("n", "<leader>fY", function()

@@ -105,7 +105,7 @@ A buffer is a file loaded in memory. A window is a split that shows one buffer. 
 | `<leader>p` / `<leader>P` | Paste the system clipboard after / before the cursor |
 | `<leader>p` (visual) | Replace the selection with the system clipboard, leaving every register untouched |
 | `Cmd+V` | Paste from the terminal in any mode; it skips registers, so `.` cannot repeat it |
-| `<leader>fy` / `<leader>fY` | Copy the buffer path (relative / absolute) to the system clipboard |
+| `<leader>fy` / `<leader>fY` | Copy the buffer path (relative to the git root / absolute) to the system clipboard |
 
 ## Editing habits from Vim
 
