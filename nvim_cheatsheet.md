@@ -17,6 +17,7 @@
 - [Git](#git)
 - [CodeDiff](#codediff)
 - [Octo (GitHub PRs)](#octo-github-prs)
+- [Markdown](#markdown)
 - [Toggles and appearance](#toggles-and-appearance)
 - [Colorschemes installed](#colorschemes-installed)
 - [Plugin management](#plugin-management)
@@ -237,6 +238,22 @@ Octo reads and writes through `gh`, so it only sees pushed PRs. Its review diff 
 | Panel | `\C` | Review a single commit of the PR |
 
 To edit one of your comments, put the cursor on its line, move to the thread window, change the text and save with `:w`.
+
+## Markdown
+
+The `lang.markdown` extra renders markdown in the buffer (render-markdown), including the cursor line, and fits wide tables to the window by wrapping cells. Saving a `.md` never reformats it, and markdownlint skips the line-length rule (`markdownlint.jsonc`).
+
+| Key | Action |
+|---|---|
+| `nvim -R file.md` | Open read-only, as a viewer: `:w` refuses to save |
+| `<leader>um` | Toggle rendering |
+| `<leader>cp` | Toggle the live preview in the browser |
+| `gO` | Outline of the headings in a list, `<CR>` jumps to one |
+| `<leader>ss` | Pick a heading (marksman) |
+| `]]` / `[[` | Next / previous heading |
+| `gd` | Follow the link under the cursor |
+| `<leader>cf` | Format the file by hand (prettier and markdownlint) |
+| `<leader>us` | Toggle spelling (on by default in markdown, Spanish and English); `z=` suggests fixes |
 
 ## Toggles and appearance
 
