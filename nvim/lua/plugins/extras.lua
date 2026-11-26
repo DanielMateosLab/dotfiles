@@ -94,6 +94,19 @@ return {
   },
   { "jd4n14/vscode2026.nvim", lazy = true },
   {
+    "rachartier/tiny-inline-diagnostic.nvim",
+    event = "VeryLazy",
+    priority = 1000,
+    opts = { options = { multilines = { enabled = true } } },
+    keys = {
+      { "<leader>uI", "<cmd>TinyInlineDiag toggle<cr>", desc = "Toggle inline diagnostics" },
+    },
+  },
+  {
+    "neovim/nvim-lspconfig",
+    opts = { diagnostics = { virtual_text = false } },
+  },
+  {
     "coder/claudecode.nvim",
     opts = { terminal = { provider = "snacks" } },
     keys = {

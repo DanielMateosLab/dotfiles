@@ -183,7 +183,7 @@ Neovim has no mouse hover: nothing pops up when the pointer rests on a symbol. E
 |---|---|
 | Hover a symbol: type and docs | `K` on the symbol. Press `K` again to enter the float and scroll, `q` or `<Esc>` to close |
 | Hover an error or warning | `<leader>cd` opens a float with every message on the line: text, source (eslint, ts) and rule code |
-| Read the error without a float | The message already shows at the end of the line as virtual text |
+| Error text under the line | tiny-inline-diagnostic draws the full message below the line, wrapped. `<leader>uI` toggles it |
 | Cmd+click / F12: go to definition | `gd` |
 | Alt+F12: peek definition | `<leader>cgd` (Glance) |
 | Shift+F12: references | `gr` |
