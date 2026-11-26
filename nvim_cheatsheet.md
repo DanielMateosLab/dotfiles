@@ -14,6 +14,7 @@
 - [Expand and shrink a selection](#expand-and-shrink-a-selection)
 - [Folds](#folds)
 - [Code (LSP)](#code-lsp)
+- [VS Code gestures in Neovim](#vs-code-gestures-in-neovim)
 - [Git](#git)
 - [CodeDiff](#codediff)
 - [Octo (GitHub PRs)](#octo-github-prs)
@@ -173,6 +174,28 @@ Octo's diff windows fold every unchanged region, so a diff there shows only the 
 | `<leader>xx` | All diagnostics (Trouble) |
 | `<leader>xX` | Buffer diagnostics (Trouble) |
 | `<leader>cgd` / `cgr` / `cgy` / `cgi` | Glance: definitions / references / type / implementations |
+
+## VS Code gestures in Neovim
+
+Neovim has no mouse hover: nothing pops up when the pointer rests on a symbol. Every gesture has a key instead, and the cursor takes the place of the pointer.
+
+| In VS Code | In Neovim |
+|---|---|
+| Hover a symbol: type and docs | `K` on the symbol. Press `K` again to enter the float and scroll, `q` or `<Esc>` to close |
+| Hover an error or warning | `<leader>cd` opens a float with every message on the line: text, source (eslint, ts) and rule code |
+| Read the error without a float | The message already shows at the end of the line as virtual text |
+| Cmd+click / F12: go to definition | `gd` |
+| Alt+F12: peek definition | `<leader>cgd` (Glance) |
+| Shift+F12: references | `gr` |
+| Go to type definition | `gy` |
+| F8: next problem | `]d` / `[d` |
+| Lightbulb quick fix | `<leader>ca` |
+| F2: rename | `<leader>cr` |
+| Parameter hints while typing | `<C-k>` in insert mode, or `gK` in normal mode |
+| Problems panel | `<leader>xx` (all) / `<leader>xX` (this buffer) |
+| Cmd+P | `<leader>ff` |
+| Cmd+Shift+O: symbols in the file | `<leader>ss` |
+| Cmd+Shift+F with a selection | `<leader>sw` in visual mode |
 
 ## Git
 
