@@ -32,7 +32,11 @@
 | `<leader>fr` | Recent files |
 | `<leader>fb` / `<leader>,` | Open buffers |
 | `<leader>fc` | Find a config file |
-| `<leader>/` / `<leader>sg` | Grep in the project |
+| `<leader>/` / `<leader>sg` | Grep in the project (live, ripgrep, regex by default) |
+| `<leader>sG` | Grep from the current directory instead of the project root |
+| `<leader>sw` (visual) | VS Code's Cmd+Shift+F: grep the selected text across the project |
+| `<leader>sw` | Grep the word under the cursor |
+| `<leader>sW` | Same as `<leader>sw`, from the current directory |
 | `<leader>sR` | Resume the last search |
 | `<leader>sr` | Search and replace |
 | `<leader>sk` | Search keymaps |
@@ -40,6 +44,18 @@
 | `<leader>ss` | Symbols in the current file (LSP, needs a server attached) |
 | `<leader>sS` | Symbols in the whole project (LSP) |
 | `<leader>cs` | Symbols outline side panel (Trouble) |
+
+Inside any grep or file picker, these work in insert and normal mode:
+
+| Key | Action |
+|---|---|
+| `<a-r>` | Toggle regex / literal text |
+| `<a-i>` | Include files ignored by git |
+| `<a-h>` | Include hidden files |
+| `<c-g>` | Toggle live search |
+| `<c-q>` | Send every result to the quickfix list |
+
+There is no `pattern -- *.ts` filter for file types, unlike VS Code's "files to include".
 
 ## Scrolling
 
@@ -241,7 +257,7 @@ To edit one of your comments, put the cursor on its line, move to the thread win
 
 ## Markdown
 
-The `lang.markdown` extra renders markdown in the buffer (render-markdown), including the cursor line, and fits wide tables to the window by wrapping cells. Saving a `.md` never reformats it, and markdownlint skips the line-length rule (`markdownlint.jsonc`).
+The `lang.markdown` extra renders markdown in the buffer (render-markdown), including the cursor line, and fits wide tables to the window by wrapping cells. Saving a `.md` never reformats it. Lint warnings stay hidden while the buffer is rendered and show up in insert mode or with rendering off.
 
 | Key | Action |
 |---|---|
